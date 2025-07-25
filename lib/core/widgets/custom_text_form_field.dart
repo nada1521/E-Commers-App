@@ -1,3 +1,5 @@
+import 'package:e_commerce/core/utils/app_colors.dart';
+import 'package:e_commerce/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -5,13 +7,13 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.hintText,
-    this.prefixIcon,
+    this.suffixIcon,
     this.kebordType,
     this.controll,
     this.validator,
     this.textCapitalization,
     this.obscureText = false,
-    this.textAlig = TextAlign.right,
+    this.textAlig = TextAlign.left,
     this.title,
     this.onChanged,
     this.autovalidateMode,
@@ -19,7 +21,7 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFormatters,
   });
   final String? hintText;
-  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final TextInputType? kebordType;
   final TextEditingController? controll;
   final FormFieldValidator<String>? validator;
@@ -34,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.only(top: 15),
       child: TextFormField(
         autovalidateMode: autovalidateMode,
         onChanged: onChanged,
@@ -58,22 +60,18 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            // borderSide: BorderSide(color: color ?? AppColor.kTextColor),
+            borderSide: BorderSide(color: color ?? AppColors.orange),
           ),
           enabledBorder: OutlineInputBorder(
-            // borderSide: BorderSide(color: AppColor.kInactiveColor),
+            borderSide: BorderSide(color: AppColors.grey),
             borderRadius: BorderRadius.circular(12),
           ),
           enabled: true,
           label: title,
           hintText: hintText,
-          hintStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            //  color: AppColor.kInactiveColor,
-          ),
+          hintStyle: AppTextStyle.regularFontSize14Greay,
 
-          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         ),
       ),

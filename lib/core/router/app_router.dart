@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/router/app_router_path.dart';
+import 'package:e_commerce/features/auth/Forget%20Password/view/screen/forget_password_screen.dart';
 import 'package:e_commerce/features/auth/sign_in/view/screen/sign_in_screen.dart';
 import 'package:e_commerce/features/auth/sign_up/view/screen/sign_up_screen.dart';
 import 'package:e_commerce/features/splash_and_onbording/view/screen/on_bording_screen.dart';
@@ -28,6 +29,11 @@ abstract class AppRouter {
         path: AppRouterPath.kSignInScreen,
         name: AppRouterPath.kSignInScreen,
         builder: (context, state) => SignInScreen(),
+      ),
+        GoRoute(
+        path: AppRouterPath.kForgetPasswordScreen,
+        name: AppRouterPath.kForgetPasswordScreen,
+        builder: (context, state) => ForgetPasswordScreen(),
       ),
     ],
   );

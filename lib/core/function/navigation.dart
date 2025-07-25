@@ -9,6 +9,6 @@ void navigationPushNamed(context, String path) {
   GoRouter.of(context).pushNamed(path);
 }
 
-void navigationPop(context) {
+ navigationPop(context) {
   GoRouter.of(context).pop();
 }

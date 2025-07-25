@@ -23,4 +23,9 @@ abstract class AppTextStyle {
     color: AppColors.orange,
     fontWeight: AppFontWeight.bold,
   );
+  static TextStyle regularFontSize14Greay = TextStyle(
+    fontSize: 14,
+    color: AppColors.grey,
+    fontWeight: AppFontWeight.regular,
+  );
 }

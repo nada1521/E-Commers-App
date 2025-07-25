@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/auth/sign_in/view/widgets/sign_in_form_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -6,7 +7,10 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: SingleChildScrollView(
+        child: SignInFormWidget(),
+      ),
     );
   }
 }
+
