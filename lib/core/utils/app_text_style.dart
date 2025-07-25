@@ -4,23 +4,23 @@ import 'package:flutter/widgets.dart';
 
 abstract class AppTextStyle {
   static TextStyle semyBoldFontSize18wight = TextStyle(
-    fontSize: 18,
+    fontSize: 14,
     color: AppColors.white,
     fontWeight: AppFontWeight.semiBold,
   );
-   static TextStyle regularFontSize14Grey = TextStyle(
-    fontSize: 14,
+  static TextStyle regularFontSize12Grey = TextStyle(
+    fontSize: 12,
     color: AppColors.grey,
     fontWeight: AppFontWeight.regular,
   );
-   static TextStyle mediumFontSize14Orang = TextStyle(
-    fontSize: 14,
+  static TextStyle mediumFontSize12Orang = TextStyle(
+    fontSize: 12,
     color: AppColors.orange,
     fontWeight: AppFontWeight.medium,
   );
-    static TextStyle boldFontSize24white = TextStyle(
-    fontSize: 24,
-    color: AppColors.white,
+  static TextStyle boldFontSize20Orang = TextStyle(
+    fontSize: 20,
+    color: AppColors.orange,
     fontWeight: AppFontWeight.bold,
   );
 }
