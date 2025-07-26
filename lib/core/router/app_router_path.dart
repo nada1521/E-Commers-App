@@ -5,4 +5,7 @@ abstract class AppRouterPath {
   static const kForgetPasswordScreen = '/forgetPasswordScreen';
   static const kVerificationCodeScreen = '/VerificationCodeScreen';
   static const kCreateNewPasswordScreen = '/createNewPasswordScreen';
+   static const kHomeScreen = '/homeScreen';
+  
+
 }
