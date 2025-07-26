@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/function/navigation.dart';
 import 'package:e_commerce/core/helper/spacing.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/splash_and_onbording/view/widgets/already_have_an_accunt_sign_in.dart';
@@ -20,7 +19,7 @@ class ButtonAndAlreadyHaveAnAccount extends StatelessWidget {
         verticalSpace(32),
         CustomButton(onPressed: onPressed, title: title),
         verticalSpace(23),
-        AlreadyHaveAnAccuntSignInText(navigationPath: navigationPop(context)),
+        AlreadyHaveAnAccuntSignInText(),
       ],
     );
   }

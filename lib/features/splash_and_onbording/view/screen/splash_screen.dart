@@ -28,7 +28,12 @@ class SplashScreen extends StatelessWidget {
               verticalSpace(163),
               CustomButton(
                 onPressed: () {
-                  navigationPushNamed(context, AppRouterPath.kOnBordingScreen);
+                  Future.delayed(Duration(milliseconds: 100), () {
+                    navigationPushNamed(
+                      context,
+                      AppRouterPath.kOnBordingScreen,
+                    );
+                  });
                 },
                 title: 'Let’s Get Started ',
               ),
