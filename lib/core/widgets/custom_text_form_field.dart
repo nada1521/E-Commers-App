@@ -9,7 +9,7 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     this.suffixIcon,
     this.kebordType,
-    this.controll,
+    this.controller,
     this.validator,
     this.textCapitalization,
     this.obscureText = false,
@@ -18,12 +18,13 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.autovalidateMode,
     this.color,
-    this.inputFormatters,
+    this.inputFormatters, this.prefixIcon,
   });
   final String? hintText;
+  final IconData? prefixIcon;
   final Widget? suffixIcon;
   final TextInputType? kebordType;
-  final TextEditingController? controll;
+  final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final TextCapitalization? textCapitalization;
   final bool obscureText;
@@ -54,7 +55,7 @@ class CustomTextFormField extends StatelessWidget {
         textAlign: textAlig,
         keyboardType: kebordType,
         textInputAction: TextInputAction.next,
-        controller: controll,
+        controller: controller,
         // style: TextStyle(color:),
         obscureText: obscureText,
         decoration: InputDecoration(
@@ -70,7 +71,7 @@ class CustomTextFormField extends StatelessWidget {
           label: title,
           hintText: hintText,
           hintStyle: AppTextStyle.regularFontSize14Greay,
-
+          prefixIcon:Icon(prefixIcon) ,
           suffixIcon: suffixIcon,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         ),

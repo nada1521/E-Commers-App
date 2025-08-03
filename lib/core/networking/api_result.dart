@@ -2,7 +2,7 @@ import 'package:e_commerce/core/errors/failure.dart';
 
 sealed class ApiResult<T> {
   const factory ApiResult.success(T data) = Success<T>;
-  const factory ApiResult.failure(Failures error) = Failure<T>;
+  const factory ApiResult.failure(FailureServer error) = Failure<T>;
 }
 
 class Success<T> implements ApiResult<T> {
@@ -12,16 +12,15 @@ class Success<T> implements ApiResult<T> {
 }
 
 class Failure<T> implements ApiResult<T> {
-  final Failures error;
+  final FailureServer error;
 
   const Failure(this.error);
 }
-
 // try and catch عشان تهندل مكان
 extension ApiResultX<T> on ApiResult<T> {
   R when<R>({
     required R Function(T data) success,
-    required R Function(Failures error) failure,
+    required R Function(FailureServer error) failure,
   }) {
     if (this is Success<T>) {
       return success((this as Success<T>).data);

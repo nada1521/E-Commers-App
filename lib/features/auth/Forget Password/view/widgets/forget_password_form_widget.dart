@@ -1,9 +1,10 @@
-import 'package:e_commerce/core/function/navigation.dart';
 import 'package:e_commerce/core/helper/spacing.dart';
-import 'package:e_commerce/core/router/app_router_path.dart';
+import 'package:e_commerce/core/utils/app_text_style.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/function/navigation.dart';
+import '../../../../../core/router/app_router_path.dart';
 
 class ForgetPasswordFormWidget extends StatelessWidget {
   const ForgetPasswordFormWidget({super.key});
@@ -22,7 +23,7 @@ class ForgetPasswordFormWidget extends StatelessWidget {
                 AppRouterPath.kVerificationCodeScreen,
               );
             },
-            title: 'Reset',
+            title: Text('Reset', style: AppTextStyle.semyBoldFontSize18wight),
           ),
         ],
       ),

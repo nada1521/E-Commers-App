@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/helper/spacing.dart';
+import 'package:e_commerce/core/utils/app_text_style.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/splash_and_onbording/view/widgets/already_have_an_accunt_sign_in.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,10 @@ class ButtonAndAlreadyHaveAnAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         verticalSpace(32),
-        CustomButton(onPressed: onPressed, title: title),
+        CustomButton(
+          onPressed: onPressed,
+          title: Text(title, style: AppTextStyle.semyBoldFontSize18wight),
+        ),
         verticalSpace(23),
         AlreadyHaveAnAccuntSignInText(),
       ],

@@ -10,13 +10,13 @@ class GetStartedText extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Column(
         children: [
-          verticalSpace(140),
+          verticalSpace(60),
           Text('Get Started', style: AppTextStyle.boldFontSize20Orang),
           Text(
             'Enter your details below',
             style: AppTextStyle.regularFontSize12Grey,
           ),
-          verticalSpace(50),
+          verticalSpace(20),
         ],
       ),
     );

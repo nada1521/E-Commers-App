@@ -35,7 +35,10 @@ class VerificationCodeFormWidget extends StatelessWidget {
                   AppRouterPath.kCreateNewPasswordScreen,
                 );
               },
-              title: 'Confirm',
+              title: Text(
+                'Confirm',
+                style: AppTextStyle.semyBoldFontSize18wight,
+              ),
             ),
             verticalSpace(30),
             DidNotGetTheCodeYetResend(),
@@ -45,7 +48,3 @@ class VerificationCodeFormWidget extends StatelessWidget {
     );
   }
 }
-
-
-
-

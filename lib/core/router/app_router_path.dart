@@ -5,7 +5,10 @@ abstract class AppRouterPath {
   static const kForgetPasswordScreen = '/forgetPasswordScreen';
   static const kVerificationCodeScreen = '/VerificationCodeScreen';
   static const kCreateNewPasswordScreen = '/createNewPasswordScreen';
-   static const kHomeScreen = '/homeScreen';
-  
-
+  static const kHomeScreen = '/homeScreen';
+  static const kFavoretScreen = '/favoretScreen';
+  static const kMyCartScreen = '/myCartScreen';
+  static const kProfileScreen = '/profileScreen';
+  static const kNavBarScreens = '/navBarScreens';
+  static const kProductDetailsScreen = '/productDetailsScreen';
 }

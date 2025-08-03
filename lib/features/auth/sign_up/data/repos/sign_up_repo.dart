@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce/core/errors/error_handler.dart';
 import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/core/networking/api_result.dart';
 import 'package:e_commerce/features/auth/sign_up/data/models/sign_up_request_body.dart';
@@ -9,6 +10,7 @@ class SignUpRepo {
   final SignUpApiService signUpApiService;
 
   SignUpRepo({required this.signUpApiService});
+  
   Future<ApiResult<SignUpResponseModel>> signUp(
     SignUpRequestBody signUpRequest,
   ) async {
@@ -16,9 +18,12 @@ class SignUpRepo {
       var respons = await signUpApiService.signUp(signUpRequest);
       return ApiResult.success(respons);
     } on DioException catch (dioError) {
-      return ApiResult.failure(FailureServer.fromDioException(dioError));
+      final errorMsg = AuthErrorHandler.extractSingleMessage(
+        dioError.response?.data,
+      );
+      return ApiResult.failure(FailureServer(errorMsg) );
     } catch (error) {
-      return Failure(FailureServer(error.toString()));
+      return ApiResult.failure(FailureServer('حدث خطأ غير متوقع'));
     }
   }
 }

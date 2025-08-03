@@ -3,7 +3,9 @@ import 'package:e_commerce/core/service/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main()  {
+  WidgetsFlutterBinding.ensureInitialized();
+ 
   setupGetIt();
   runApp(ECommersApp());
 }

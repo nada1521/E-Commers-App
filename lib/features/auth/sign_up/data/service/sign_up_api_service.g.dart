@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../service/sign_up_api_service.dart';
+part of 'sign_up_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator

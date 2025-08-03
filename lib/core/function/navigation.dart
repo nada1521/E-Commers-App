@@ -5,8 +5,8 @@ void navigationpushReplacemen(context, String path) {
   GoRouter.of(context).pushReplacement(path);
 }
 
-void navigationPushNamed(context, String path) {
-  GoRouter.of(context).pushNamed(path);
+void navigationPushNamed(context, String path ,{Object? extra}) {
+  GoRouter.of(context).pushNamed(path, extra: extra);
 }
 
  navigationPop(context) {
