@@ -7,7 +7,9 @@ class SignUpRequestBody {
   final String name;
   final String email;
   final String password;
+  @JsonKey(name: "phone")
   final String phonNumber;
+  @JsonKey(name: "rePassword")
   final String confirmPassword;
 
   SignUpRequestBody({

@@ -1,18 +1,24 @@
 import 'package:e_commerce/core/router/app_router_path.dart';
-import 'package:e_commerce/core/service/service_locator.dart';
-import 'package:e_commerce/features/Home/view/screens/home_screen.dart';
-import 'package:e_commerce/features/auth/Forget%20Password/view/screen/create_new_password.dart';
-import 'package:e_commerce/features/auth/Forget%20Password/view/screen/forget_password_screen.dart';
-import 'package:e_commerce/features/auth/Forget%20Password/view/screen/verification_code_screen.dart';
-import 'package:e_commerce/features/auth/sign_in/logic/sign_in_cubit.dart';
-import 'package:e_commerce/features/auth/sign_in/view/screen/sign_in_screen.dart';
-import 'package:e_commerce/features/auth/sign_up/data/repos/sign_up_repo.dart';
-import 'package:e_commerce/features/auth/sign_up/logic/sign_up_cubit.dart';
-import 'package:e_commerce/features/auth/sign_up/view/screen/sign_up_screen.dart';
-import 'package:e_commerce/features/splash_and_onbording/view/screen/on_bording_screen.dart';
-import 'package:e_commerce/features/splash_and_onbording/view/screen/splash_screen.dart';
+import 'package:e_commerce/features/Home/Home/view/screen/product_details_screen.dart';
+import 'package:e_commerce/features/Home/view/widgets/nav_bar_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import '../../features/Home/Favoret/view/screen/favoret_screen.dart';
+import '../../features/Home/Home/data/models/product_response_model.dart';
+import '../../features/Home/My Cart/view/screen/my_cart_screen.dart';
+import '../../features/Home/Profile/views/screen/profil_screen.dart';
+import '../../features/Home/Home/view/screen/home_screen.dart';
+import '../../features/auth/Forget Password/view/screen/create_new_password.dart';
+import '../../features/auth/Forget Password/view/screen/forget_password_screen.dart';
+import '../../features/auth/Forget Password/view/screen/verification_code_screen.dart';
+import '../../features/auth/sign_in/logic/sign_in_cubit.dart';
+import '../../features/auth/sign_in/view/screen/sign_in_screen.dart';
+import '../../features/auth/sign_up/data/repos/sign_up_repo.dart';
+import '../../features/auth/sign_up/logic/sign_up_cubit.dart';
+import '../../features/auth/sign_up/view/screen/sign_up_screen.dart';
+import '../../features/splash_and_onbording/view/screen/on_bording_screen.dart';
+import '../../features/splash_and_onbording/view/screen/splash_screen.dart';
+import '../service/service_locator.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
@@ -40,7 +46,7 @@ abstract class AppRouter {
         path: AppRouterPath.kSignInScreen,
         name: AppRouterPath.kSignInScreen,
         builder: (context, state) => BlocProvider(
-          create: (context) =>SignInCubit(getIt.get()),
+          create: (context) => SignInCubit(getIt.get()),
           child: SignInScreen(),
         ),
       ),
@@ -59,10 +65,36 @@ abstract class AppRouter {
         name: AppRouterPath.kCreateNewPasswordScreen,
         builder: (context, state) => CreateNewPasswordScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: AppRouterPath.kHomeScreen,
         name: AppRouterPath.kHomeScreen,
         builder: (context, state) => HomeScreen(),
+      ),
+      GoRoute(
+        path: AppRouterPath.kMyCartScreen,
+        name: AppRouterPath.kMyCartScreen,
+        builder: (context, state) => MyCartScreen(),
+      ),
+      GoRoute(
+        path: AppRouterPath.kFavoretScreen,
+        name: AppRouterPath.kFavoretScreen,
+        builder: (context, state) => FavoretScreen(),
+      ),
+      GoRoute(
+        path: AppRouterPath.kProfileScreen,
+        name: AppRouterPath.kProfileScreen,
+        builder: (context, state) => ProfilScreen(),
+      ),
+      GoRoute(
+        path: AppRouterPath.kNavBarScreens,
+        name: AppRouterPath.kNavBarScreens,
+        builder: (context, state) => NavBarWidget(),
+      ),
+      GoRoute(
+        path: AppRouterPath.kProductDetailsScreen,
+        name: AppRouterPath.kProductDetailsScreen,
+        builder: (context, state) =>
+            ProductDetailsScreen(product: state.extra as ProductResponseModel),
       ),
     ],
   );

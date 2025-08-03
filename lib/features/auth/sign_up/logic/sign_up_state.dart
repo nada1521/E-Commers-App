@@ -8,6 +8,7 @@ class SignUpInitial extends SignUpState {}
 class SignUpInitialState extends SignUpState {}
 
 class SignUpSuccessState extends SignUpState {
+  
   final SignUpResponseModel signUpResponseModel;
 
   SignUpSuccessState({required this.signUpResponseModel});

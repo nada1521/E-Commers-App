@@ -8,9 +8,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [GetStartedText(), SignUpFormWidget()],
-      ),
+      body: CustomScrollView(slivers: [GetStartedText(), SignUpFormWidget()]),
     );
   }
 }

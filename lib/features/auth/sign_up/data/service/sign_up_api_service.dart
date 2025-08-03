@@ -4,7 +4,7 @@ import 'package:retrofit/http.dart';
 import '../../../../../core/networking/api_constans.dart';
 import '../models/sign_up_request_body.dart';
 import '../models/sign_up_response_model.dart';
-part '../repos/sign_up_api_service.g.dart';
+part 'sign_up_api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstans.beasURL)
 abstract class SignUpApiService {

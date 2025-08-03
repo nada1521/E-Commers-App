@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce/core/errors/error_handler.dart';
 import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/core/networking/api_result.dart';
 import 'package:e_commerce/features/auth/sign_in/data/model/sign_in_request_model.dart';
@@ -16,10 +17,13 @@ class SignInRepo {
     try {
       var respons = await signInApiService.signIn(signInRequest);
       return ApiResult.success(respons);
-    } on DioException catch (dioError) {
-      return ApiResult.failure(FailureServer.fromDioException(dioError));
+    }  on DioException catch (dioError) {
+      final errorMsg = AuthErrorHandler.extractSingleMessage(
+        dioError.response?.data,
+      );
+      return ApiResult.failure(FailureServer(errorMsg) );
     } catch (error) {
-      return Failure(FailureServer(error.toString()));
+      return ApiResult.failure(FailureServer('حدث خطأ غير متوقع'));
     }
   }
 }

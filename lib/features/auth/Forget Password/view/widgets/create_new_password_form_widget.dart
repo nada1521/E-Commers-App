@@ -2,7 +2,10 @@ import 'package:e_commerce/core/helper/spacing.dart';
 import 'package:e_commerce/core/utils/app_text_style.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
+import 'package:e_commerce/core/widgets/dialog_successfully.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/function/show_pop_up.dart';
 
 class CreateNewPasswordFormWidget extends StatelessWidget {
   const CreateNewPasswordFormWidget({super.key});
@@ -34,7 +37,21 @@ class CreateNewPasswordFormWidget extends StatelessWidget {
               suffixIcon: Icon(Icons.visibility),
             ),
             verticalSpace(40),
-            CustomButton(onPressed: () {}, title: 'Create New Password'),
+            CustomButton(
+              onPressed: () {
+                showPopUp(
+                  context,
+                  DialogSuccessfully(
+                    title: "Password has been updated",
+                    subTitle: "Please press sign in to continue",
+                  ),
+                );
+              },
+              title: Text(
+                'Create New Password',
+                style: AppTextStyle.semyBoldFontSize18wight,
+              ),
+            ),
           ],
         ),
       ),

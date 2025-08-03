@@ -11,4 +11,5 @@ abstract class AppColors {
   static const Color maroon = Color(0xff955B3A);
   static const Color darkGreen = Color(0xff329236);
   static const Color lightRed = Color(0xff330202);
+  static const Color lightGrey = Color(0xffE7E7E7);
 }

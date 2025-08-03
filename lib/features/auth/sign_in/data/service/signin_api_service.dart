@@ -6,11 +6,11 @@ import 'package:e_commerce/features/auth/sign_in/data/model/sign_in_response_mod
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
-part '../signin_api_service.g.dart';
+part 'signin_api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstans.beasURL)
 abstract class SignInApiService {
-  factory SignInApiService(Dio dio, {String baseUrl}) = _SignInApiService;
+  factory SignInApiService(Dio dio) = _SignInApiService;
 
   @POST(ApiConstans.signIn)
   Future<SignInResponseModel> signIn(

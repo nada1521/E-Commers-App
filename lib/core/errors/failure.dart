@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:e_commerce/core/errors/error_handler.dart';
 
 abstract class Failures {
   final String errorMessage;
@@ -34,15 +35,9 @@ class FailureServer extends Failures {
         return FailureServer('oops there was an error , please try again');
     }
   }
+
   factory FailureServer.fromResponse(int? statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-      return FailureServer(response['error']['message']);
-    } else if (statusCode == 404) {
-      return FailureServer('Youre request not found, Please try later!');
-    } else if (statusCode == 500) {
-      return FailureServer('Internet server error,Please try later! ');
-    } else {
-      return FailureServer('oops there was an error , please try again');
-    }
+      final errorMessage = AuthErrorHandler.extractSingleMessage(response);
+  return FailureServer(errorMessage);
   }
 }
